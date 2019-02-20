@@ -3,11 +3,10 @@
 namespace TCG\Voyager\Models;
 
 use Carbon\Carbon;
-use Jenssegers\Mongodb\Eloquent\Model as Authenticatable;
 use TCG\Voyager\Contracts\User as UserContract;
 use TCG\Voyager\Traits\VoyagerUser;
 
-class User extends Authenticatable implements UserContract
+class User extends UserBase implements UserContract
 {
     use VoyagerUser;
 
