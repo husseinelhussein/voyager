@@ -2,7 +2,7 @@
 
 namespace TCG\Voyager\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Traits\Translatable;
