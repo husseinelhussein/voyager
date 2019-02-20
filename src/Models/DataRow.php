@@ -1,7 +1,7 @@
 <?php
 
 namespace TCG\Voyager\Models;
-
+//
 use Jenssegers\Mongodb\Eloquent\Model;
 
 class DataRow extends Model
