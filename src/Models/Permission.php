@@ -2,7 +2,7 @@
 
 namespace TCG\Voyager\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 use TCG\Voyager\Facades\Voyager;
 
 class Permission extends Model
