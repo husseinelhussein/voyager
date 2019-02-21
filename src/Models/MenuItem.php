@@ -73,7 +73,11 @@ class MenuItem extends Model
 
     public function getParametersAttribute()
     {
-        return json_decode($this->attributes['parameters']);
+        $params = "{}";
+        if(isset($this->attributes['parameters'])){
+          $params = $this->attributes['parameters'];
+        }
+        return json_decode($params);
     }
 
     public function setParametersAttribute($value)

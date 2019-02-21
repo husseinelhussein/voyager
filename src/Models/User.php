@@ -3,6 +3,7 @@
 namespace TCG\Voyager\Models;
 
 use Carbon\Carbon;
+use MongoDB\BSON\UTCDateTime;
 use TCG\Voyager\Contracts\User as UserContract;
 use TCG\Voyager\Traits\VoyagerUser;
 
@@ -27,6 +28,10 @@ class User extends UserBase implements UserContract
 
     public function setCreatedAtAttribute($value)
     {
+        if($value instanceof UTCDateTime){
+            $value = $value->toDateTime();
+            $value = $value->format('Y-m-d H:i:s');
+        }
         $this->attributes['created_at'] = Carbon::parse($value)->format('Y-m-d H:i:s');
     }
 
