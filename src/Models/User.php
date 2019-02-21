@@ -39,9 +39,25 @@ class User extends UserBase implements UserContract
     {
         $this->attributes['settings'] = collect($this->settings)->merge(['locale' => $value]);
     }
+    public function fromJson($value, $asObject = false)
+    {
+        if(is_string($value)){
+            return json_decode($value, ! $asObject);
+        }
+        return $value;
+    }
 
+    public function setSettingsAttribute($value){
+        if(isset($this->settings)){
+            return $this->settings;
+        }
+        return;
+    }
     public function getLocaleAttribute()
     {
-        return $this->settings['locale'];
+        if(isset($this->settings['locale'])){
+            return $this->settings['locale'];
+        }
+        return;
     }
 }
